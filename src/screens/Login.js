@@ -25,6 +25,9 @@ export default function Login() {
       alert("enter valid credentials");
     }
     if (jsn.success) {
+      localStorage.setItem("userEmail", cred.email);
+      localStorage.setItem("authToken", jsn.authToken);
+      console.log(localStorage.getItem("authToken"));
       navigate("/")
     }
 
@@ -50,7 +53,7 @@ export default function Login() {
           </div>
 
           <button type="submit" className=" m-3 btn btn-success">Submit</button>
-          <Link to="/createuser" className="m-3 btn btn-danger" >Not a user</Link>
+          <Link to="/createuser" className="m-3 btn btn-danger" >Not a user! sign up</Link>
         </form>
       </div>
     </>
